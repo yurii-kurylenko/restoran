@@ -11,3 +11,7 @@ default: &default
 development:
   <<: *default
   database: restoran_app_dev
+
+test:
+  <<: *default
+  database: restoran_app_test

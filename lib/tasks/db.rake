@@ -4,4 +4,7 @@ namespace :db do
     CreateReservations.new.change
   end
 
+  task :purge do
+    Reservation.all.each(&:destroy)
+  end
 end

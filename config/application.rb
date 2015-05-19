@@ -3,6 +3,7 @@ require 'rake'
 require 'mysql2'
 require 'pry'
 require 'yaml'
+require 'singleton'
 
 APP_ROOT = "#{File.dirname(__FILE__)}/.."
 

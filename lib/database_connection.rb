@@ -2,12 +2,13 @@ class DatabaseConnection
   RESERVATION_TABLE = 'reservations'
 
   def self.check_migration
-    return if ActiveRecord::Base.connection.table_exists? RESERVATION_TABLE
     begin
       ActiveRecord::Base.connection
     rescue Exception => e
-      return 'No connection to database'
+      return false
     end
+    return false unless ActiveRecord::Base.connection.table_exists? RESERVATION_TABLE
+    true
     'Please, run rake db:migrate create table for reservations'
   end
 

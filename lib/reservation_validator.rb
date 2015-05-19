@@ -9,9 +9,9 @@ class ReservationValidator
       msg = "Overlaping with table #{overlapped_with.table_number}, \
        time frame: [#{overlapped_with.book_start}.. \
        #{overlapped_with.book_end}]"
-      @reservation.errors[:base] << msg
+      @reservation.errors[:overlapping] << msg
     end
-    @reservation.errors[:base] << 'Start date is greater than end date' unless dates_valid?
+    @reservation.errors[:overlapping] << 'Start date is greater than end date' unless dates_valid?
   end
 
   private

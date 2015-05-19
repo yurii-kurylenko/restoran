@@ -88,16 +88,15 @@ class RestoranApp
   end
 
   def check_migration
-    message = DatabaseConnection.check_migration
-    unless message.blank?
-      p message
+    unless DatabaseConnection.check_migration
+      p 'Please, run rake db:migrate create table for reservations'
       @exit = true
     end
   end
 
   def show_reservation_error(reservation)
     p 'ERRORS:'
-    p reservation.errors.messages[:base].first
+    p reservation.errors.messages[:overlapping].first
     p '-'.center(76, '-')
     show_table
   end

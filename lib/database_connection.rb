@@ -9,7 +9,6 @@ class DatabaseConnection
     end
     return false unless ActiveRecord::Base.connection.table_exists? RESERVATION_TABLE
     true
-    'Please, run rake db:migrate create table for reservations'
   end
 
   def initialize(config)

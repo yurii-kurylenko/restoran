@@ -1,5 +1,10 @@
-How to use:
+TO run app:<br />
+<br />
+bundle install; <br />
+rake db:migrate;<br />
+bin/restoran.rb;<br />
 
-bundle install
-rake db:migrate
-bin/restoran.rb
+To run tests:<br />
+<br />
+rake db:prepare;<br />
+rspec;<br />
